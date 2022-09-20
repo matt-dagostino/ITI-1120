@@ -1,6 +1,6 @@
-a = int(input('Enter the first number : ')) #Ask for input
-q = int(input('Enter the second number : ')) #Ask for input
-n = int(input('Enter the third number : ')) #Ask for input
+a = int(input('Enter the first number : ')) #Ask for input 1
+q = int(input('Enter the second number : ')) #Ask for input 2
+n = int(input('Enter the third number : ')) #Ask for input 3
 
 multiplication = a
 answer = [a]

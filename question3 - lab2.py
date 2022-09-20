@@ -1,4 +1,4 @@
-x = int(input('Enter a non-negative integer: ')) #Ask to enter integer
+x = int(input('Enter a non-negative integer: ')) #Ask to enter non-negative integer
 reverse = 0 #Set default reverse
 
 while x != 0: #Do loop while the number entered is not 0
