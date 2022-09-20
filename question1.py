@@ -12,4 +12,3 @@ for i in range(1, a+1):
 
 print("Divisors = " + str(divisors))
 print("Sum of divisors = " + str(sum))
-
