@@ -1,6 +1,3 @@
-# Write a program that receives a positive integer, your output should be all divisors of this integer
-# in a comma separated format as shown, and the sum of all divisors.
-
 a = int(input('Enter an integer: '))
 sum = 0
 divisors = []
