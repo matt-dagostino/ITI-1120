@@ -3,11 +3,12 @@ q = int(input('Enter the second number : ')) #Ask for input 2
 n = int(input('Enter the third number : ')) #Ask for input 3
 
 multiplication = a
-answer = [a]
-
+print(multiplication, end = ", ")
 for i in range(1,n):
 
-    multiplication = multiplication * q
-    answer.append(multiplication) 
-
-print(str(answer))
+    if i != n-1:
+        multiplication = multiplication * q
+        print(multiplication, end = ", ")
+    if i == n-1:
+        multiplication = multiplication * q
+        print(multiplication)
