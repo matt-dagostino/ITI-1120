@@ -1,11 +1,12 @@
 import os
-os.system('cls' if os.name == 'nt' else 'clear')
+os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 
 
-a = int(input("Input the first integer: "))
-b = int(input("Input the second integer: "))
+a = int(input("Input the first integer: ")) #Asks for input
+b = int(input("Input the second integer: ")) #Asks for input
 
-print("Primes = ", end = "")
+print() #Print empty line
+print("Primes = ", end = "") #Print start of line
 primeNumbers = 0
 
 for i in range(a, b+1):
@@ -18,4 +19,4 @@ for i in range(a, b+1):
         print(i, end = " ")
 
 print()
-print("Number of primes = " + str(primeNumbers))
+print("Number of primes = " + str(primeNumbers), "\n")
