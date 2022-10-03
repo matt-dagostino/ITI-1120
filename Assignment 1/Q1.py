@@ -38,8 +38,6 @@ for i in range(0, len(numbers2)):
         break
 
 
-
-
 print(numbers)
 print(numbers2)
 
