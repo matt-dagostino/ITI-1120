@@ -4,37 +4,39 @@ import os # Imports os for the next line to work
 os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 
 a = int(input("Input a positive integer greater than 1: ")) #Asks for input
-is_prime = True
-is_prime2 = True
-numbers = []
-numbers2 = []
+is_prime = True #Set boolean value to True
+is_prime2 = True #Set boolean value to True
+numbers = [] #Create list
+numbers2 = [] #Create list
 
-for i in range(2,a):
-    if a % i == 0:
-        is_prime = False
+if a <= 1: #Check if input is bigger than 1
+    print("ERROR: Number needs to be bigger than 1!") #Print error message
+    exit() #Stop code from continuing
 
-if not is_prime:
-    for i in range(2, a):
-        if a % i == 0:
-            numbers.append(i)
+for i in range(2,a): #Loop from 2 to inputted number
+    if a % i == 0: #Check if there is a remainder, if not, then,
+        is_prime = False #Set boolean value to False
 
-for i in range(0, len(numbers)):
-    is_prime2 = True
-    if numbers[i] == 2:
-        numbers2.append(numbers[i])
-    for j in range(2, numbers[i]):
-        if numbers[i] % j == 0 and numbers[i] != j:
-            is_prime2 = False 
-        if is_prime2 and j == numbers[i] -1:
-            numbers2.append(numbers[i])
-            break
+if not is_prime: #If boolean value is false, then,
+    for i in range(2, a): #Loop from 2 to inputted number
+        if a % i == 0: #Check if there is a remainder, if not, then,
+            numbers.append(i) #Add number 'i' to list
 
-prime_number_list = numbers2
+for i in range(0, len(numbers)): #Loop from 2 to length of list 'numbers'
+    is_prime2 = True #Set boolean value to True
+    if numbers[i] == 2: #Check if the number is 2, then,
+        numbers2.append(numbers[i]) #Add 2 to the list
+    for j in range(2, numbers[i]):  #Loop from 2 to the value of numbers[index]
+        if numbers[i] % j == 0 and numbers[i] != j: #If no remainder and not equal to the same number then,
+            is_prime2 = False #Set boolean False
+        if is_prime2 and j == numbers[i] -1: #If its prime
+            numbers2.append(numbers[i]) #Add to second list
+            break #Stop for loop (line 29)
 
-productList = lcm(*prime_number_list) #Times the numbers in the list together (*)
-prime_number_list.append(a // productList) # Adds the initial inputed number devided by the productList to the list of prime numbers
+productList = lcm(*numbers2) #Times the numbers in the list together (*)
+numbers2.append(a // productList) # Adds the initial inputed number devided by the productList to the list of prime numbers
 
-c = Counter(prime_number_list) # Counts how many times the numbers are repeated in a list
+c = Counter(numbers2) # Counts how many times the numbers are repeated in a list
 final_list = c.items() # Turns counter into a dictionary with (factorNumber, repeatedTimes)
 answerString = [] # Create list called answerString
 
