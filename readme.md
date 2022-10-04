@@ -9,7 +9,10 @@ GitHub pages link: https://matt-dagostino.github.io/SEG2900.
 
 Team: 6 <br/>
 Team Member Names:<br />
-Matteo Dagostino - Student Number: 300287930 - Github Username : matt-dagostino - https://github.com/matt-dagostino <br />
+-Matteo Dagostino <br />
+  - Student Number: 300287930 <br />
+  - Github Username : matt-dagostino <br />
+  - https://github.com/matt-dagostino <br />
 Linden Sheehy - Student Number: 300[        ] - GitHub Username: [        ] - https://github.com/-- <br /> 
 Alexandre Pilon - Student Number: 300[        ] - GitGub Username: [        ] - https://github.com/-- <br />
 Maryanne Moyana - Student Number: 300[        ] - GitHub Username: [        ] - https://github.com/-- <br />
