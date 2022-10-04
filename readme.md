@@ -8,7 +8,7 @@ Repo link: [https://github.com/matt-dagostino/SEG2900] <br/>
 GitHub pages link: https://matt-dagostino.github.io/SEG2900.
 
 Team: 6 <br/>
-Team Member Names:<br />
+
 Matteo Dagostino - Student Number: 300287930 - Github Username : matt-dagostino - https://github.com/matt-dagostino <br />
 Linden Sheehy - Student Number: 300[        ] - GitHub Username: [        ] - https://github.com/-- <br /> 
 Alexandre Pilon - Student Number: 300[        ] - GitGub Username: [        ] - https://github.com/-- <br />
