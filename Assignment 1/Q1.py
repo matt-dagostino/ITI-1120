@@ -1,7 +1,11 @@
+#------------------------------------------------
+# Assignment 1 - Question 1 - Matteo Dagostino
+#------------------------------------------------
+
+import os #Import for next line to work
+os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 from collections import Counter # Imports the counter function which counts 
 from math import * # Imports all math functions
-import os # Imports os for the next line to work
-os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 
 a = int(input("Input a positive integer greater than 1: ")) #Asks for input
 is_prime = True #Set boolean value to True

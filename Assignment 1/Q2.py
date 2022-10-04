@@ -1,8 +1,14 @@
-import os # Imports os for the next line to work
+#------------------------------------------------
+# Assignment 1 - Question 2 - Matteo Dagostino
+#------------------------------------------------
+
+import os #Import for next line to work
 os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 
+#---------------- Inputs and set variables ------------------------
 n = int(input("Enter the number in base 10: ")) #Asks for number
 b = int(input("Enter the base wanted: ")) #Asks for base
+
 
 remainder = [] #Creates list
 
