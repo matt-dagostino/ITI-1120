@@ -3,9 +3,9 @@ Coming Soon
 
 Organization name: Coming soon
 
-Organization link: [https://github.com/matt-dagostino/SEG2900] <br />
+Organization link: [Coming Soon] <br />
 Repo link: [https://github.com/matt-dagostino/SEG2900] <br/>
-GitHub pages link: https://matt-dagostino.github.io/SEG2900.
+GitHub pages link: [https://matt-dagostino.github.io/SEG2900]
 
 Group number 6 <br/>
 
