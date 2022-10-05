@@ -36,6 +36,7 @@ if n % 2 == 0:
 else:
     median = sorted_list[middle]
 print("Median: " + format(median, '.3f'))
+
 #---------------------------- Calculate Range ------------------------------
 range = sorted_list[len(sorted_list)-1] - sorted_list[0]
 print("Range:", range)
