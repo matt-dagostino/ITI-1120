@@ -22,13 +22,15 @@ for i in range(0,n):
 ans = ans / n
 print("Average:",ans)
 
-#---------------------------- Calculate Modes ------------------------------
-from collections import Counter # Imports the counter function which counts 
-c = Counter(numbers) # Counts how many times the numbers are repeated in a list
-final_list = c.items
-print(c)
-mode = []
-for number, repeatedTimes in final_list:
-    if repeatedTimes > 1:
-        mode.append(number)
+#---------------------------- Calculate Mode ------------------------------
+from statistics import multimode
+mode = multimode(numbers)
+mode = sorted(mode)
+print("Mode: ", end = "")
+print(*mode, sep=", ")
 
+#---------------------------- Calculate Median ------------------------------
+sorted_list = sorted(numbers)
+middle = n // 2
+median = (sorted_list[middle] + sorted_list[middle-1])/2
+print("Median: " + format(median, '.3f'))
