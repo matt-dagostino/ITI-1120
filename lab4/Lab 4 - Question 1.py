@@ -14,7 +14,7 @@ for i in range(0,n):
     list.append(number)
 
 c = Counter(list) # Counts how many times the numbers are repeated in a list
-final_list = c.items() # Turns counter into a dictionary with (factorNumber, repeatedTimes)
+final_list = c.items() # Turns counter into a dictionary with (numberEntered, repeatedTimes)
 answer = []
 small = 10000
 for numberEntered, repeatedTimes in final_list:
