@@ -20,7 +20,6 @@ string2_sorted = sorted(string2_dict)
 #print("String 1: " + str(string1_sorted))
 #print("String 2: " + str(string2_sorted))
 
-
 print("-------------------------------------")
 if string1_sorted == string2_sorted:
     print("These strings are anagrams.")
