@@ -2,9 +2,8 @@
 # Assignment 1 - Question 5 - Matteo Dagostino
 #------------------------------------------------
 
-from platform import java_ver
-import random
-import os
+import random #Import to get random number
+import os #Makes line 8 work
 from re import T #Import for next line to work
 os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 

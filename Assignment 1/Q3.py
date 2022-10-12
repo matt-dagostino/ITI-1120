@@ -8,7 +8,7 @@ os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 
 #---------------- Inputs and set variables ------------------------
 x = float(input("Enter the x value: ")) #Asks for x value
-n = int(input("Enter the n value: ")) #Asks for x value
+n = int(input("Enter the n value: ")) #Asks for n value
 cosx = float(1) #Sets predetermined value for cosx
 sinx = float(x) #Sets predetermined value for sinx
 
@@ -37,6 +37,6 @@ for i in range(3,1+2*(n), 2): #Loop to find out the denominator numbers (and pow
         sinx = sinx + ((x ** i)/factorial(i)) #Get answer of sinx
     j +=1 # Add 1 to j
 
-
-print("Sin(" + str(x) + ") = " + format(sinx, '.20f'))
-print("Cos(" + str(x) + ") = " + format(cosx, '.20f'))
+#---------------- Printing answers ------------------------
+print("Sin(" + str(x) + ") = " + format(sinx, '.7f')) #Print sinx
+print("Cos(" + str(x) + ") = " + format(cosx, '.7f')) #Print cosx
