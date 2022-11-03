@@ -38,3 +38,4 @@ else:
         print("A is not a subset of B, and B is a subset of A")
     else:
         print("A is not a subset of B, and B is not a subset of A")
+print("------------------------------------------------------------")
