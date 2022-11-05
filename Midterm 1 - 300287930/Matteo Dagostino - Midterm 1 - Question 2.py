@@ -30,9 +30,7 @@ def combine(midterm, final):
         for key2,value2 in final.items():
             if key in final:
                 if key == key2:
-                    temp_grade = value + value2
-                    print(temp_grade)
-                    endGrade[key] = temp_grade
+                    endGrade[key] = value + value2
                     break
             else:
                 endGrade[key] = 0
@@ -40,12 +38,11 @@ def combine(midterm, final):
             if key2 in midterm:
                 break
             else:
-                endGrade[key] = value2
+                endGrade[key2] = value2
             
     return endGrade
 
-print(A, B)
-print("--------------------------------------")
+print("-------------------------------------- Output --------------------------------------")
 print(combine(A,B))
 print()
         
