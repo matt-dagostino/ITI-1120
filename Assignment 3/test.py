@@ -18,7 +18,7 @@ def starting_point(maze):
 
 def ending_point(maze):
     for i in range(0, len(maze)):
-        for j in range(0, 16):
+        for j in range(0, y):
             if A[i][j] == "s":
                 return i,j
 
@@ -31,18 +31,31 @@ def create_empty_maze():
     empty_maze = []
     for i in range(0,len(A)):
         l = []
-        for j in range(0,16):
+        for j in range(0,y):
             l.append(0)
         empty_maze.append(l)
     return empty_maze
 
-A = [to_list("################"),to_list("#ppppp#pps##pp##"), to_list("pp###pppp###pp##"), to_list("#p###pp#p##ppp##"), to_list("#pppp##pp##ppp##"),
-to_list("####p###########"), to_list("###pp###########"), to_list("####ppppp#######"), to_list("########pp####pp"), to_list("########ppppppp#"), to_list("################") ]
+answer = str(input("Enter one of the following numbers: \n1) Enter my own labyrinth\n2) Use the preset labyrinth from the assignment\n---> "))
+
+if answer == "1":
+    A = []
+    x = int(input("Enter the amount of rows that your labyrinth has: "))
+    y = int(input("Enter the amount of columns that your labyrinth has: "))
+    print("------------------------------------------------")
+    print("When asked to input the rows, please enter them like this --> ############### or #ppp#pps#pp###")
+    for i in range(0,x):
+        A.append(to_list(str(input(str(i+1) + ") Enter a row: "))))
+
+elif answer == "2":
+    A = [to_list("################"),to_list("#ppppp#pps##pp##"), to_list("pp###pppp###pp##"), to_list("#p###pp#p##ppp##"), to_list("#pppp##pp##ppp##"),
+    to_list("####p###########"), to_list("###pp###########"), to_list("####ppppp#######"), to_list("########pp####pp"), to_list("########ppppppp#"), to_list("################")]
+    y = 16
+else:
+    print("Error: It seems like you have not entered 1 or 2. Please restart the program!")
 
 starting = starting_point(A)
 ending = ending_point(A)
-
-#MAKE SURE 0's are as long as real labyrinth
 
 temp_maze = create_empty_maze()
         
@@ -50,7 +63,7 @@ temp_maze[starting[0]][starting[1]] = 1
 
 def next_move(move):
     for row in range(0, len(A)):
-        for column in range(0, 16):
+        for column in range(0, y):
             if temp_maze[row][column] == move:
                 #Going up
                 if row > 0 and temp_maze[row-1][column] == 0 and A[row-1][column] != "#":
@@ -62,7 +75,7 @@ def next_move(move):
                 if row < len(A)-1 and temp_maze[row+1][column] == 0 and A[row+1][column] != "#":
                     temp_maze[row+1][column] = move + 1
                 #Going right
-                if column < 16-1 and temp_maze[row][column+1] == 0 and A[row][column+1] != "#":
+                if column < y-1 and temp_maze[row][column+1] == 0 and A[row][column+1] != "#":
                     temp_maze[row][column+1] = move + 1
 
 
@@ -87,7 +100,7 @@ while length_path != 1:
         row = row + 1
         path.append((row+1, column+1))
         length_path = length_path -1
-    elif column < 16-1 and temp_maze[row][column+1] == length_path-1:
+    elif column < y-1 and temp_maze[row][column+1] == length_path-1:
         column = column + 1
         path.append((row+1, column+1))
         length_path = length_path -1
@@ -117,7 +130,7 @@ path2 = []
 path2.append((row+1,column+1))
 
 while length_path != 1:
-    if column < 16-1 and temp_maze[row][column+1] == length_path-1:
+    if column < y-1 and temp_maze[row][column+1] == length_path-1:
         column = column + 1
         path2.append((row+1, column+1))
         length_path = length_path -1
@@ -147,7 +160,7 @@ for item in path2_reverse:
 temp_maze = []
 for i in range(0,len(A)):
     l = []
-    for j in range(0,16):
+    for j in range(0,y):
         l.append(0)
     temp_maze.append(l)
 
@@ -183,7 +196,7 @@ while length_path != 1:
         length_path = length_path -1
         A[row][column] = "^"
     #Going left
-    elif column < 16-1 and temp_maze[row][column+1] == length_path-1:
+    elif column < y-1 and temp_maze[row][column+1] == length_path-1:
         column = column + 1
         length_path = length_path -1
         A[row][column] = "<"
