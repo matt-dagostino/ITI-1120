@@ -24,17 +24,36 @@ def ending_point(maze):
 
 def ending_point2(maze):
     for i in range(0, len(maze)):
-        if A[i][15] == "p":
-            return i,15
+        if A[i][y-1] == "p":
+            return i,y-1
 
-def create_empty_maze():
+def create_empty_maze(rows, columns):
     empty_maze = []
     for i in range(0,len(A)):
         l = []
         for j in range(0,y):
             l.append(0)
         empty_maze.append(l)
+    empty_maze[rows][columns] = 1
     return empty_maze
+
+def next_move(move):
+    for row in range(0, len(A)):
+        for column in range(0, y):
+            if temp_maze[row][column] == move:
+                #Going up
+                if row > 0 and temp_maze[row-1][column] == 0 and A[row-1][column] != "#":
+                    temp_maze[row-1][column] = move + 1
+                #Going left
+                if column > 0 and temp_maze[row][column-1] == 0 and A[row][column-1] != "#":
+                    temp_maze[row][column-1] = move + 1
+                #Going down
+                if row < len(A)-1 and temp_maze[row+1][column] == 0 and A[row+1][column] != "#":
+                    temp_maze[row+1][column] = move + 1
+                #Going right
+                if column < y-1 and temp_maze[row][column+1] == 0 and A[row][column+1] != "#":
+                    temp_maze[row][column+1] = move + 1
+
 
 answer = str(input("Enter one of the following numbers: \n1) Enter my own labyrinth\n2) Use the preset labyrinth from the assignment\n---> "))
 
@@ -57,27 +76,7 @@ else:
 starting = starting_point(A)
 ending = ending_point(A)
 
-temp_maze = create_empty_maze()
-        
-temp_maze[starting[0]][starting[1]] = 1
-
-def next_move(move):
-    for row in range(0, len(A)):
-        for column in range(0, y):
-            if temp_maze[row][column] == move:
-                #Going up
-                if row > 0 and temp_maze[row-1][column] == 0 and A[row-1][column] != "#":
-                    temp_maze[row-1][column] = move + 1
-                #Going left
-                if column > 0 and temp_maze[row][column-1] == 0 and A[row][column-1] != "#":
-                    temp_maze[row][column-1] = move + 1
-                #Going down
-                if row < len(A)-1 and temp_maze[row+1][column] == 0 and A[row+1][column] != "#":
-                    temp_maze[row+1][column] = move + 1
-                #Going right
-                if column < y-1 and temp_maze[row][column+1] == 0 and A[row][column+1] != "#":
-                    temp_maze[row][column+1] = move + 1
-
+temp_maze = create_empty_maze(starting[0], starting[1])
 
 move = 0
 while temp_maze[ending[0]][ending[1]] == 0:
@@ -112,9 +111,7 @@ while length_path != 1:
 starting = ending_point(A)
 ending = ending_point2(A)
 
-temp_maze = create_empty_maze()
-        
-temp_maze[starting[0]][starting[1]] = 1
+temp_maze = create_empty_maze(starting[0], starting[1])
 
 move = 0
 length_path = 0
@@ -157,17 +154,11 @@ for item in path_reverse:
 for item in path2_reverse:
     path3.append(item)
 
-temp_maze = []
-for i in range(0,len(A)):
-    l = []
-    for j in range(0,y):
-        l.append(0)
-    temp_maze.append(l)
 
 starting = starting_point(A)
-temp_maze[starting[0]][starting[1]] = 1
 ending = ending_point2(A)
 
+temp_maze = create_empty_maze(starting[0], starting[1])
 
 move = 0
 while temp_maze[ending[0]][ending[1]] == 0:
