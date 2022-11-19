@@ -3,6 +3,10 @@
 #           Matteo Dagostino 300287930
 #               mdago035@uottawa.ca
 #------------------------------------------------
+# This program will:
+# ---> Find the minimum path to get to the end of the labyrinth (and display it)
+# ---> Display the list of positions that Leon has to take to get the rocket launcher (s)
+#------------------------------------------------
 import os # Makes next line work
 os.system('cls' if os.name == 'nt' else 'clear') # Clears the console
 
