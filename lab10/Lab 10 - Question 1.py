@@ -119,7 +119,7 @@ for i in range(0, n):
     v4.set_dimension(i, dc[i])
 
 
-#●○●○●○●○●○●○●○●○●○（Testing dimensions）●○●○●○●○●○●○●○●○●○
+#         ---===+++（Testing dimensions）+++===---
 if v1.dimension() == 5:
     print('Test 1 - dimension - Passed')
 else:
@@ -139,9 +139,8 @@ if v4.dimension() == 7:
     print('Test 4 - dimension - Passed')
 else:
     print('Test 4 - dimension - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing add_dimensions and get_dimension）●○●○●○●○●○●○●○●○●○
+#   ---===+++（Testing add_dimensions and get_dimension）+++===---
 v1.add_dimension(6.45)
 if v1.dimension() == 6 and v1.get_dimension(5) == 6.45:
     print('Test 1 - add_dimension - Passed')
@@ -159,9 +158,8 @@ if v4.dimension() == 8 and v4.get_dimension(7) == 5.76:
     print('Test 3 - add_dimension - Passed')
 else:
     print('Test 3 - add_dimension - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing remove_dimension）●○●○●○●○●○●○●○●○●○
+#  ---===+++（Testing remove_dimension）+++===---
 v1.remove_dimension()
 if v1.dimension() == 5:
     print('Test 1 - remove_dimension - Passed')
@@ -173,9 +171,8 @@ if v4.dimension() == 7:
     print('Test 2 - remove_dimension - Passed')
 else:
     print('Test 2 - remove_dimension - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing insert_dimension）●○●○●○●○●○●○●○●○●○
+#  ---===+++（Testing insert_dimension）+++===---
 v1.insert_dimension(3, 5.71)
 if v1.get_dimension(3) == 5.71 and v1.dimension() == 6:
     print('Test 1 - insert_dimension - Passed')
@@ -187,9 +184,8 @@ if v2.get_dimension(5) == 7.3 and v2.dimension() == 7:
     print('Test 2 - insert_dimension - Passed')
 else:
     print('Test 2 - insert_dimension - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing erase_dimension）●○●○●○●○●○●○●○●○●○
+#   ---===+++（Testing erase_dimension）+++===---
 v1.erase_dimension(2)
 if v1.get_dimension(2) == 5.71 and v1.dimension() == 5:
     print('Test 1 - erase_dimension - Passed')
@@ -201,9 +197,8 @@ if v4.get_dimension(5) == -6.0 and v4.dimension() == 6:
     print('Test 2 - erase_dimension - Passed')
 else:
     print('Test 2 - erase_dimension - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing magnitude）●○●○●○●○●○●○●○●○●○
+#    ---===+++（Testing magnitude）+++===---
 if abs(v1.magnitude() - 12.325810318190038) < 1e-9:
     print('Test 1 - magnitude - Passed')
 else:
@@ -218,9 +213,8 @@ if abs(v3.magnitude() - 10.087120500916008) < 1e-9:
     print('Test 3 - magnitude - Passed')
 else:
     print('Test 3 - magnitude - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing multiply）●○●○●○●○●○●○●○●○●○
+#   ---===+++（Testing multiply）+++===---
 v2 = v1.multiply(5)
 if (v2.vectors == v1.multiply(5).vectors):
     print('Test 1 - multiply - Passed')
@@ -231,9 +225,8 @@ if v3.vectors == v1.multiply(6.43).vectors:
     print('Test 2 - multiply - Passed')
 else:
     print('Test 2 - multiply - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing operator *）●○●○●○●○●○●○●○●○●○
+#   ---===+++（Testing operator *）+++===---
 v4 = v1 * v2
 if v4.vectors == (v1 * v2).vectors:
     print('Test 1 - * - Passed')
@@ -245,9 +238,8 @@ if v4.vectors == (v2 * v3).vectors:
     print('Test 2 - * - Passed')
 else:
     print('Test 2 - * - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing operator +）●○●○●○●○●○●○●○●○●○
+# ---===+++（Testing operator +）+++===---
 v2 = v1 + v4
 if v2.vectors == (v1 + v4).vectors:
     print('Test 1 - + - Passed')
@@ -265,9 +257,8 @@ if v1.vectors == (v2 + v4).vectors:
     print('Test 3 - + - Passed')
 else:
     print('Test 3 - + - Failed')     
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing operator -）●○●○●○●○●○●○●○●○●○
+#  ---===+++（Testing operator -）+++===---
 v2 = v1 - v4
 if v2.vectors == (v1 - v4).vectors:
     print('Test 1 - - - Passed')
@@ -284,9 +275,8 @@ if v1.vectors == (v2 - v4).vectors:
     print('Test 3 - - - Passed')
 else:
     print('Test 3 - - - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing Equal to）●○●○●○●○●○●○●○●○●○
+#  ---===+++（Testing Equal to）+++===---
 if v1 == v2:
     print('Test 1 - Equal to - Failed')
 else:
@@ -296,9 +286,8 @@ if v4 == v3:
     print('Test 2 - Equal to - Passed')
 else:
     print('Test 2 - Equal to - Failed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Testing Not equal to）●○●○●○●○●○●○●○●○●○
+# ---===+++（Testing Not equal to）+++===---
 if v1 != v2:
     print('Test 1 - Not equal to - Passed')
 else:
@@ -313,9 +302,8 @@ if v4 != v3:
     print('Test 3 - Not equal to - Failed')
 else:
     print('Test 3 - Not equal to - Passed')
-#----------------------------------------------------------
 
-#●○●○●○●○●○●○●○●○●○（Printing the vectors (with titles)）●○●○●○●○●○●○●○●○●○
+# ---===+++（Printing the vectors (with titles)）+++===---
 print("Vector 1: ", end ="")
 v1.print()
 print("Vector 2: ", end ="")
@@ -324,4 +312,3 @@ print("Vector 3: ", end ="")
 v3.print()
 print("Vector 4: ", end ="")
 v4.print()
-#----------------------------------------------------------
