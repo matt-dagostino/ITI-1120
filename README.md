@@ -40,7 +40,7 @@ In this document you will find a little summary of every program in this github 
 * Question 2: Standard deviation of numbers in a list
 * Question 3: Checking if a string is a substring of another string
 ## Lab Task 6
-* Question 1: Program for e-transfers (amount, security questions, recipients)
+* Program for e-transfers (amount, security questions, recipients)
 ## Lab Task 7
 * Question 1: Working with sets and comparing sets (same as question 8, assignment 1)
 * Question 2: Sorting hockey players by team
