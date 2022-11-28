@@ -48,6 +48,7 @@ In this document you will find a little summary of every program in this github 
 * Question 1: Checking if a matrix is lower or upper triangular
 * Question 2: Solving a crossword puzzle
 ## Lab Task 9
-* Question 1: Calculating student's final course grade using classes
-
+* Calculating student's final course grade using classes
+## Lab Task 10
+* Creating a class that can modify vectors (add, erase, insert, get, set, multiply, operators and more!)
 
