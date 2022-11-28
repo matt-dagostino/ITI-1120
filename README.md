@@ -14,9 +14,11 @@ In this document you will find a little summary of every program in this github 
 * Question 9: List of position of all occurences of a string
 * Question 10: Number of smaller rectangles and squares in a big rectangle
 ## Assignment 2
-* MasterMind: Coding the mastermind board game (guess the color combo)
+* Recreating the mastermind board game (guess the color combo)
 ## Assignment 3
-* Labyrinth: Leading the user through a labyrinth, finding the best and shortest routes aswell as navigating to special objects in the labyrinth
+* Creating an algorithm that will lead a user through a labyrinth, finding the best and shortest routes aswell as navigating to special objects in the labyrinth
+## Assignment 4
+* Simplified version of the game Poker
 
 ## Lab Task 1
 * Question 1: Smallest and largest number possible with 3 digits
