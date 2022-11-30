@@ -37,12 +37,16 @@ def check(word): #Check if word is just same letter repeated
 
 # Recursive functions ---------------------------------
 def integerSum(n):
+    # int --> int
+    # returns the sum of all the numbers from 1 until n
     if n == 0:
         return 0
     else:
         return n + integerSum(n-1)
 
 def sequencing(n, seq):
+    # int, list  --> list
+    # finds the sequence needed from n, outputs the list of numbers
     seq.append(n)
     if n == 1:
         return seq
@@ -54,6 +58,8 @@ def sequencing(n, seq):
     return sequencing(n, seq)
 
 def checkWord(word):
+    # string -> string
+    # checks if the string inputted is all the same letter
     if len(word) > 1:
         i = 0
         n = len(word)
