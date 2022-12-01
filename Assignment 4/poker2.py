@@ -44,6 +44,9 @@ class Card:
     else:
       rank = self.rank
     return str(rank) + self.suit
+
+  def test(self):
+    return 1  
    
 class cardDeck:
   def __init__ (self):
@@ -56,7 +59,7 @@ class cardDeck:
   def shuffle (self):
     random.shuffle(self.cardDeck)
 
-  def addCard(self):
+  def add_card(self):
     return self.cardDeck.pop(0)
 
 class Poker:
@@ -69,7 +72,7 @@ class Poker:
     for i in range(numPlayers):
       hand = []
       for j in range (numCards):
-        hand.append(self.cardDeck.addCard())
+        hand.append(self.cardDeck.add_card())
       self.hand.append(hand)
   
   def printHands(self):
@@ -80,12 +83,21 @@ class Poker:
       for card in sortedHand:
         print(card, end= " ")
       print()
- 
-  def start(self, hand):
-    self.isStraightFlush(sorted(hand))
 
-  def isStraightFlush(self, hand):
-    pass
+  def isStraightFlush(self):
+    sortedHand = sorted(self.hand[0])
+    straightFlush = True
+    Cardrank = sortedHand[0].rank
+    Cardsuit = sortedHand[0].suit
+    for card in sortedHand:
+      if card.rank != Cardrank or card.suit != Cardsuit:
+        straightFlush = False
+        self.isFourOfAKind(sortedHand)
+        break
+      else:
+        Cardrank = Cardrank + 1
+    if straightFlush:
+        print('Straight Flush')
 
   def isFourOfAKind(self, hand):                 
     pass
@@ -115,4 +127,4 @@ class Poker:
 numPlayers = 2
 startRound = Poker(numPlayers)
 startRound.printHands()
-startRound.start(startRound.hand)
+startRound.isStraightFlush()

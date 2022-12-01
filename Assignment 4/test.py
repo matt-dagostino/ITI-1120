@@ -260,7 +260,6 @@ class Poker (object):
       flag=True
       print ("One Pair")
       self.tlist.append(total_point)
-      
     else:
       flag=False
       self.isHigh(sortedHand)
