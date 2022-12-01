@@ -24,7 +24,7 @@ def sequence(n): #If divisable, divide by 2, else times 3 + 1
     seq.append(1)
     return seq
 
-def check(word): #Check if word is just same letter repeated
+def check(word): #Check if word is palindrome
     n = len(word)
     i = 0
     j = n-1
@@ -59,7 +59,7 @@ def sequencing(n, seq):
 
 def checkWord(word):
     # string -> string
-    # checks if the string inputted is all the same letter
+    # checks if the string inputted is palindrome
     if len(word) > 1:
         i = 0
         n = len(word)
