@@ -9,7 +9,6 @@ import string
 import os  # Makes next line work
 os.system(('cls' if os.name == 'nt' else 'clear'))  # Clears the console
 
-
 class Card:
     presetRank = [
         1,
