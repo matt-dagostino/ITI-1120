@@ -17,6 +17,19 @@ class Card:
     self.rank = rank
     self.suit = suit
 
+  def __eq__ (self, other): # Equal to
+    return (self.rank == other.rank)
+  def __ne__ (self, other): # Not Equal to
+    return (self.rank != other.rank)
+  def __ge__ (self, other): # Greater than or equal
+    return (self.rank >= other.rank)
+  def __le__ (self, other): # Less than or equal
+    return (self.rank <= other.rank)
+  def __gt__ (self, other): # Greater than
+    return (self.rank > other.rank)
+  def __lt__ (self, other): # Less than
+    return (self.rank < other.rank)
+
   def __str__ (self):
     if self.rank == 10:
       rank = "T"
@@ -31,21 +44,7 @@ class Card:
     else:
       rank = self.rank
     return str(rank) + self.suit
-
-  def __eq__ (self, other): # Equal to
-    return (self.rank == other.rank)
-  def __ne__ (self, other): # Not Equal to
-    return (self.rank != other.rank)
-  def __ge__ (self, other): # Greater than or equal
-    return (self.rank >= other.rank)
-  def __le__ (self, other): # Less than or equal
-    return (self.rank <= other.rank)
-  def __gt__ (self, other): # Greater than
-    return (self.rank > other.rank)
-  def __lt__ (self, other): # Less than
-    return (self.rank < other.rank)
    
-
 class cardDeck:
   def __init__ (self):
     self.cardDeck = []
