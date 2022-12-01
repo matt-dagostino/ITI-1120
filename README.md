@@ -54,5 +54,5 @@ In this document you will find a little summary of every program in this github 
 ## Lab Task 10
 * Creating a class that can modify vectors (add, erase, insert, get, set, multiply, operators and more!)
 ## Lab Task 11
-* Turning non-recursive functions into recursive functions (Sum Integers, Sequence, Check word)
+* Turning non-recursive functions into recursive functions (Sum Integers, Sequence, Palindrome)
 
