@@ -67,7 +67,7 @@ def checkWord(word):
         if word[i] != word[j]:
             return False
         else:
-            return checkWord(word[:-1])
+            return checkWord(word.lstrip(word[0]).rstrip(word[-1]))
     return True
 
 x = int(input("Enter number for sum and sequence: "))
@@ -77,9 +77,9 @@ y = str(input("Enter word for check word: "))
 print("\nNon-Recursive Functions: ")
 print("Sum Integers: " + str(sumIntegers(x)))
 print("Sequence: " + str(sequence(x)))
-print("Word: " + str(check(y)))
+print("Palindrome: " + str(check(y)))
 #---------------------------------
 print("\nRecursive Functions: ")
 print("Sum Integers: " + str(integerSum(x)))
 print("Sequence: " + str(sequencing(x, [])))
-print("Word: " + str(checkWord(y)) + "\n")
+print("Palindrome: " + str(checkWord(y)) + "\n")
