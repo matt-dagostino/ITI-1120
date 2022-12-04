@@ -78,7 +78,8 @@ class cardDeck:
     def add_card(self):
         return self.cardDeck.pop(0)
 
-class PokerGame:
+
+class Poker:
     def __init__(self, numPlayers):
         self.cardDeck = cardDeck()
         self.cardDeck.shuffle()
@@ -91,12 +92,6 @@ class PokerGame:
                 hand.append(self.cardDeck.add_card())
             self.hand.append(hand)
 
-    def add_to_table(self, cardNumber):
-        table = []
-        for i in range(0, cardNumber):
-            table.append(self.cardDeck.add_card())
-        return table
-
     def printPlayerHand(self, index):
             orderedHand = sorted(self.hand[index])
             print("Player " + str(index + 1) + "'s hand", end=": ")
@@ -104,39 +99,34 @@ class PokerGame:
             for card in orderedHand:
                 print(card, end=" ")
             print()
-    
-    def printTable(self, table):
-            orderedTable = sorted(table)
-            print("Cards on table: ")
-            for card in orderedTable:
-                print(card, end=" ")
-            print()
 
     def isStraightFlush(self, index):
         orderedHand = sorted(self.hand[index])
+        straightFlush = True
         Cardrank = orderedHand[0].rank
         Cardsuit = orderedHand[0].suit
         for card in orderedHand:
             if card.rank != Cardrank or card.suit != Cardsuit:
-                return False
+                straightFlush = False
+                self.isFourOfAKind(orderedHand)
+                break
             else:
                 Cardrank = Cardrank + 1
-        return True
+        if straightFlush:
+            print("Straight Flush")
 
-    def isFourOfAKind(self, index):
-        hand = sorted(self.hand[index])
+    def isFourOfAKind(self, hand):
         Cardrank = hand[2].rank
         amountCards = 0
         for card in hand:
             if card.rank == Cardrank:
                 amountCards = amountCards + 1
         if amountCards == 4:
-            return True
+            print("Four of a kind")
         else:
-            return False
+            self.isFullHouse(hand)
 
-    def isFullHouse(self, index):
-        hand = sorted(self.hand[index])
+    def isFullHouse(self, hand):
         ranks = []
         for card in hand:
             ranks.append(card.rank)
@@ -145,54 +135,57 @@ class PokerGame:
         amountOfLeftSideRanks = ranks.count(leftSideRank)
         amountOfRightSideRanks = ranks.count(rightSideRank)
         if amountOfLeftSideRanks == 3 and amountOfRightSideRanks == 2 or amountOfLeftSideRanks == 2 and amountOfRightSideRanks == 3:
-            return True
+            print("Full House")
         else:    
-            return False
+            self.isFlush(hand)
 
-    def isFlush(self, index):
-        hand = sorted(self.hand[index])
+    def isFlush(self, hand):
+        Flush = True
         Cardsuit = hand[0].suit
         for card in hand:
             if card.suit != Cardsuit:
-                return False
-        return True
+                Flush = False
+                self.isStraight(hand)
+                break
+        if Flush:
+            print("Flush")
 
-    def isStraight(self, index):
-        hand = sorted(self.hand[index])
+    def isStraight(self, hand):
+        Straight = True
         Cardrank = hand[0].rank
         for card in hand:
             if card.rank != Cardrank:
-                return False
+                Straight = False
+                self.isThreeOfAKind(hand)
+                break
             else:
                 Cardrank = Cardrank + 1
-        return True
+        if Straight:
+            print("Straight")
 
-    def isThreeOfAKind(self, index):
-        hand = sorted(self.hand[index])
+    def isThreeOfAKind(self, hand):
         Cardrank = hand[2].rank
         amountCards = 0
         for card in hand:
             if card.rank == Cardrank:
                 amountCards = amountCards + 1
         if amountCards == 3:
-            return True
+            print("Three of a kind")
         else:
-            return False
+            self.isTwoPairs(hand)
 
-    def isTwoPairs(self, index):
-        hand = sorted(self.hand[index])
+    def isTwoPairs(self, hand):
         FirstRank = hand[1].rank
         SecondRank = hand[3].rank
         ranks = []
         for card in hand:
             ranks.append(card.rank)
         if ranks.count(FirstRank) == 2 and ranks.count(SecondRank) == 2:
-            return True
+            print("Two Pairs")
         else:
-            return False
+            self.isOnePair(hand)
 
-    def isOnePair(self, index):
-        hand = sorted(self.hand[index])
+    def isOnePair(self, hand):
         counting = []
         ranks = []
         for card in hand:
@@ -201,41 +194,17 @@ class PokerGame:
             rankings = ranks.count(rank)
             counting.append(rankings)
         if counting.count(2) == 2:
-            return True
+            print("One pair")
         else:
-            return False
+            self.isHighCard(hand)
 
-class TexasHoldem(PokerGame):
-    def __init__(self):
-        super().__init__(numPlayers)
-
-
-
+    def isHighCard(self, hand):
+        print("High Card")
 
 numPlayers = int(input("Enter the amount of players: "))
-startRound = PokerGame(numPlayers)
-CardsOnTable = startRound.add_to_table(2)
-startRound.printTable(CardsOnTable)
-
+startRound = Poker(numPlayers)
 print("-----------------------------")
 for i in range(0, numPlayers):
     startRound.printPlayerHand(i)
-    if startRound.isStraightFlush(i):
-        print("Straight Flush")
-    elif startRound.isFourOfAKind(i):
-        print("Four of a kind")
-    elif startRound.isFullHouse(i):
-        print("Full House")
-    elif startRound.isFlush(i):
-        print("Flush")
-    elif startRound.isStraight(i):
-        print("Straight")
-    elif startRound.isThreeOfAKind(i):
-        print("Three of a kind")
-    elif startRound.isTwoPairs(i):
-        print("Two pairs")
-    elif startRound.isOnePair(i):
-        print("One pair")
-    else:
-        print("High Card")
+    startRound.isStraightFlush(i)
     print()
