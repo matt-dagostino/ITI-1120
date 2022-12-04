@@ -78,8 +78,7 @@ class cardDeck:
     def add_card(self):
         return self.cardDeck.pop(0)
 
-
-class Poker:
+class PokerGame:
     def __init__(self, numPlayers):
         self.cardDeck = cardDeck()
         self.cardDeck.shuffle()
@@ -193,11 +192,14 @@ class Poker:
         else:
             return False
 
-    def isHighCard(self):
-        return True
+class Texas(PokerGame):
+    pass
+
+
+
 
 numPlayers = int(input("Enter the amount of players: "))
-startRound = Poker(numPlayers)
+startRound = PokerGame(numPlayers)
 print("-----------------------------")
 for i in range(0, numPlayers):
     startRound.printPlayerHand(i)
@@ -217,6 +219,6 @@ for i in range(0, numPlayers):
         print("Two pairs")
     elif startRound.isOnePair(i):
         print("One pair")
-    elif startRound.isHighCard():
+    else:
         print("High Card")
     print()
