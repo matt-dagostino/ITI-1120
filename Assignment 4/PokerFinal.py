@@ -91,11 +91,24 @@ class PokerGame:
                 hand.append(self.cardDeck.add_card())
             self.hand.append(hand)
 
+    def add_to_table(self, cardNumber):
+        table = []
+        for i in range(0, cardNumber):
+            table.append(self.cardDeck.add_card())
+        return table
+
     def printPlayerHand(self, index):
             orderedHand = sorted(self.hand[index])
             print("Player " + str(index + 1) + "'s hand", end=": ")
 
             for card in orderedHand:
+                print(card, end=" ")
+            print()
+    
+    def printTable(self, table):
+            orderedTable = sorted(table)
+            print("Cards on table: ")
+            for card in orderedTable:
                 print(card, end=" ")
             print()
 
@@ -192,14 +205,18 @@ class PokerGame:
         else:
             return False
 
-class Texas(PokerGame):
-    pass
+class TexasHoldem(PokerGame):
+    def __init__(self):
+        super().__init__(numPlayers)
 
 
 
 
 numPlayers = int(input("Enter the amount of players: "))
 startRound = PokerGame(numPlayers)
+CardsOnTable = startRound.add_to_table(2)
+startRound.printTable(CardsOnTable)
+
 print("-----------------------------")
 for i in range(0, numPlayers):
     startRound.printPlayerHand(i)
