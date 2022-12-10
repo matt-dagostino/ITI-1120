@@ -4,7 +4,7 @@
 #               mdago035@uottawa.ca
 # ------------------------------------------------
 
-# Importing python libraries
+# Importing python libraries to use
 import random
 import math
 import string
